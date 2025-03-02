@@ -47,9 +47,10 @@ pip install flask
 ### 4. Run the CLI Application
 ```sh
 python views/cli.py
+```sh
 
 ### 5. Run the Web Application
 ```sh
 python main.py
-
+```sh
  Now Application access local `http://127.0.0.1:5000/` in your browser.
