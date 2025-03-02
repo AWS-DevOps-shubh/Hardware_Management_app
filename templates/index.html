@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+    <h1 class="text-center">Hardware Asset Management</h1>
+
+    <div class="card p-3">
+        <h2>Add New Asset</h2>
+        <form action="/add" method="post" class="row g-3">
+            <div class="col-md-3">
+                <input type="text" name="name" class="form-control" placeholder="Asset Name" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="category" class="form-control" placeholder="Category" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="serial_number" class="form-control" placeholder="Serial Number" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="location" class="form-control" placeholder="Location">
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary w-100">Add Asset</button>
+            </div>
+        </form>
+    </div>
+
+    <h2 class="mt-4">Asset List</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Serial Number</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asset in assets %}
+            <tr>
+                <td>{{ asset[0] }}</td>
+                <td>{{ asset[1] }}</td>
+                <td>{{ asset[2] }}</td>
+                <td>{{ asset[3] }}</td>
+                <td>{{ asset[4] }}</td>
+                <td>{{ asset[5] }}</td>
+                <td>
+                    <a href="/delete/{{ asset[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
