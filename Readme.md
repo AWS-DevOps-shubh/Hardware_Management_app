@@ -41,6 +41,7 @@ source venv/bin/activate  # On Windows use:
 ### 3. Install Dependencies
 ```sh
 pip install -r requirements.txt
+pip install flask
 ```
 ## If you add asset throught CLI Use this Command
 ### 4. Run the CLI Application
