@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  hardware-management:
+    build:
+      context: .
+      dockerfile: Dockerfile-multi
+    ports:
+      - "5000:5000"
