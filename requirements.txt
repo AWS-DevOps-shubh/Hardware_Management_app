@@ -1,2 +1,2 @@
 Flask==2.2.5
-sqlite3==3.38.5
+pysqlite3-binary
