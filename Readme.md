@@ -28,12 +28,12 @@ hardware_management/
 
 ## Hardware Management System Installation & Setup
 ### 1. Clone the Repository
-```
+```sh
 git clone < Hardware_Management_app url >
 cd hardware-management
 
 ### 2. Create a Virtual Environment
-```sh
+```
 python -m venv venv
 source venv/bin/activate  # On Windows use: 
 ```
