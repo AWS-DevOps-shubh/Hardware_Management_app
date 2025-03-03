@@ -28,7 +28,7 @@ hardware_management/
 
 ## Hardware Management System Installation & Setup
 ### 1. Clone the Repository
-```sh
+```
 git clone < Hardware_Management_app url >
 cd hardware-management
 
