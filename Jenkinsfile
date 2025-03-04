@@ -38,5 +38,15 @@ pipeline{
                 sh "docker compose up -d"
             }
         }
+        post{
+            success{
+                script{
+                    emailext from: 'devshubh2204@gmail.com',
+                        to: 'devshubh2204@gmail.com',
+                        body: 'Hii shubham your build is success',
+                        subject: 'Build is successfully run'
+                }
+            }
+        }
     }
 }
