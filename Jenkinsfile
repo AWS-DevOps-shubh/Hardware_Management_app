@@ -4,13 +4,17 @@ pipeline{
     stages{
         stage("code clone"){
             steps{
-                git url: "https://github.com/AWS-DevOps-shubh/Hardware_Management_app.git", branch:"main"
+               script{
+                   clone("https://github.com/AWS-DevOps-shubh/Hardware_Management_app.git", "main")
+               }
                 
             }
         }
         stage("Trivy scan file sysytem"){
             steps{
-                sh "trivy fs . -o results.json"
+                script{
+                    trivy()
+                }
             }
         }
         stage("code build"){
