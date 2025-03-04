@@ -8,6 +8,11 @@ pipeline{
                 
             }
         }
+        stage("Trivy scan file sysytem"){
+            steps{
+                sh "trivy fs . -o results.json"
+            }
+        }
         stage("code build"){
             steps{
                 sh "docker build -t hardware-management ."  
